@@ -1,0 +1,629 @@
+
+body {
+    background: url(/public/assets/img/silhouettes_of_soldiers_on_lookout_in_sunset_landscape_1905.jpg) no-repeat;
+    /* background: url(/public/assets/img/IMG_9792.PNG) no-repeat; */
+    /* background-size: 142%;
+    background-position-y: 40%;
+    background-position-x: 92%; */
+    background-size: 142%;
+    background-position-y: 35%;
+    background-position-x: 100%;
+
+    /* background: url(/public/assets/img/backgrounds/133Z_2106.w026.n002.499B.p1.499.jpg) no-repeat; */
+    /* background: url(/public/assets/img/backgrounds/133Z_2106.w026.n002.500B.p1.500.jpg) no-repeat; */
+    /* background: url(/public/assets/img/backgrounds/42664-O3EM01.jpg) no-repeat;
+    background-position-y: 15%; */
+    /* background: url(/public/assets/img/backgrounds/6229240.jpg) no-repeat; */
+    /* background: url(/public/assets/img/backgrounds/8039915.jpg) no-repeat; */
+    /* background: url(/public/assets/img/backgrounds/9294.jpg) no-repeat; */
+    /* background: url(/public/assets/img/backgrounds/7330700.jpg) no-repeat;
+    background-size: 102%;
+    background-position-y: 60%;
+    background-position-x: 82%; */
+    /* background-size: cover; */
+
+    font-family: 'Special Elite', system-ui;
+    /* font-family: "Comic Sans MS"; */
+    background-attachment: fixed;
+}
+
+
+
+.greeting {
+    text-align: center;
+    color: beige;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    /* надо ли */
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+
+
+
+.menu_container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu_list {
+    list-style-type: none;
+}
+
+.menu_block {
+    box-sizing: border-box;
+    position: relative;
+    height: 40px;
+    width: 400px;
+    margin-bottom: 15px;
+
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.menu_block:nth-child(1) {
+    z-index: 3;
+    animation-delay: 0.1s;
+}
+
+.menu_block:nth-child(2) {
+    z-index: 2;
+    animation-delay: 0.2s;
+}
+
+.menu_block:nth-child(3) {
+    z-index: 1;
+    animation-delay: 0.3s;
+}
+
+.menu_block:nth-child(4) {
+    z-index: 0;
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.greeting.fade_out {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+.menu_block.fade_out {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+.menu_block:nth-child(1).fade_out {
+    animation-delay: 0.1s;
+}
+
+.menu_block:nth-child(2).fade_out {
+    animation-delay: 0.2s;
+}
+
+.menu_block:nth-child(3).fade_out {
+    animation-delay: 0.3s;
+}
+
+.menu_block:nth-child(4).fade_out {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+}
+
+
+
+
+.rules_container, .mode_container,
+.hint_container, .start_container  {
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: beige;
+    height: 40px;
+    width: 400px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(220, 157, 121, 0.9), rgba(164, 86, 76, 0.9));
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+    left: 0px;
+    transform-origin: top;
+    transition: transform 0.1s ease;
+}
+
+.rules_container:hover, .mode_container:hover,
+.hint_container:hover, .start_container:hover {
+    transform: scale(1.05) !important;
+}
+
+.mode_container, .hint_container {
+    overflow: hidden;
+}
+
+.mode_container.clicked {
+    background: linear-gradient(135deg, rgba(220, 157, 121, 1), rgba(164, 86, 76, 1));
+    animation: modeAnim 0.6s ease forwards;
+}
+
+.hint_container.clicked {
+    background: linear-gradient(135deg, rgba(220, 157, 121, 1), rgba(164, 86, 76, 1));
+    animation: hintAnim 0.6s ease forwards;
+}
+
+@keyframes modeAnim {
+    to {
+        height: 145px;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes hintAnim {
+    to {
+        height: 110px;
+        transform: scale(1.05);
+    }
+}
+
+.mode_container.unclicked {
+    animation: reverseModeAnim 0.6s ease-out forwards;
+}
+.hint_container.unclicked {
+    animation: reverseHintAnim 0.6s ease-out forwards;
+}
+
+@keyframes reverseModeAnim {
+    0% {
+        height: 150px;
+        transform: scale(1.05);
+    }
+    50% {
+        height: 40px;
+        transform: scale(1.05);
+    }
+    100% {
+        height: 40px;
+        transform: scale(1);
+    }
+}
+
+@keyframes reverseHintAnim {
+    0% {
+        height: 115px;
+        transform: scale(1.05);
+    }
+    50% {
+        height: 40px;
+        transform: scale(1.05);
+    }
+    100% {
+        height: 40px;
+        transform: scale(1);
+    }
+}
+
+/* * */
+.rules_title, .mode_title,
+.hint_title, .start_title {
+    padding: 12px 0;
+}
+
+.mode_list,
+.hint_list {
+    list-style-type: none;
+    text-align: left;
+    font-size: 15px;
+    padding: 0;
+}
+
+.mode_list li,
+.hint_list li {
+    padding: 10px;
+    padding-left: 20px
+}
+
+.mode_list li:hover,
+.hint_list li:hover  {
+    background-color: rgba(164, 86, 76, 0.25);
+}
+
+.select_option_message {
+    position: absolute;
+    top: 45px;
+    color: #f5f5dc8f;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+.game_container {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* width: max-content; */
+    /* width: 100%; */
+    /* min-height: 100vh; */
+    /* background: linear-gradient(135deg, #7fcab940, #8b856fd4); */
+}
+
+#playspace {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    /* min-height: 100vh; */
+    padding-top: 60px;
+}
+
+
+
+.control_board {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.flag_indicator {
+    display: flex;
+    justify-content: end;
+    width: 35px;
+    font-size: 15px;
+    padding-left: 2px;
+}
+
+.indicator_flag_svg {
+    width: 16px;
+    height: 16px;
+}
+
+.flag_number {
+    position: relative;
+    top: 2px;
+    color: rgb(240, 243, 246);
+}
+
+.timer_container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1px;
+    width: 80px;
+}
+
+.time {
+    /* прочитай про позиционирование */
+    position: relative;
+    top: 2px;
+    font-size: 15px;
+    color: rgb(240, 243, 246);
+    width: 80px;
+    padding-left: 22px;
+}
+
+.clue_container {
+    display: flex;
+    padding-right: 2px;
+}
+
+.eye_button {
+    background: none;
+    border: none;
+    position: relative;
+    height: 16px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.eye_close,
+.eye_open {
+    position: absolute;
+    left: 11px;
+    top: -3px;
+    width: 24px;
+    height: 24px;
+}
+
+.eye_open {
+    visibility: hidden;
+}
+
+
+
+
+
+.game_board {
+    background-color: rgb(240, 243, 246);
+    line-height: 0;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* .game_board br {
+    display: block;
+} */
+
+.cell {
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    /* background-color: rgb(189, 189, 189); */
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(255, 255, 255, 0.8); */
+    background-color: rgb(199 176 155);
+    text-align: center;
+    font-weight: bold;
+    margin: 0.5px;
+    overflow: hidden;
+    line-height: 29px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.cell:hover {
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5), -4px -4px 6px rgba(255, 255, 255, 0.85);
+}
+
+/* Специфичность */
+
+/* div.cell:hover {
+    box-shadow: 4px 4px 6px rgba(60, 255, 0, 0.5), -4px -4px 6px rgba(1, 255, 35, 0.85);
+} */
+
+/* .cell:hover {
+    box-shadow: 4px 4px 6px rgba(255, 69, 255, 0.5), -4px -4px 6px rgba(255, 79, 246, 0.85);
+} */
+
+.cell.unhovered {
+    box-shadow: none;
+}
+
+/* .unhovered {
+    box-shadow: none !important;
+} */
+/* .unhovered {
+    box-shadow: none;
+} */
+
+/* Конец специфичности */
+
+
+.empty_cell {
+    width: 25px;
+    height: 25px;
+}
+
+.mine_svg {
+    padding-left: 2px;
+    width: 18px;
+    height: 18px;
+    vertical-align: -4px;
+}
+
+.flag_svg {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+}
+
+.dissolve_flag_svg {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 2s ease-in, visibility 2s;
+}
+
+.cross_svg {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+}
+
+
+
+
+
+
+
+.new_game_btn {
+    align-self: end;
+    width: max-content;
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-family: 'Special Elite', system-ui;
+    color: rgb(240, 243, 246);
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.new_game_btn:hover {
+    scale: 106%;
+    /* transition: transform 0.1s ease-in-out; */
+}
+
+
+
+
+
+
+.modal  {
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.2s ease-in, visibility 0.2s;  /* анимация opacity начнется сразу и продлится 3s, а visibility начнет применяться после 3 секунд.*/
+    /* transition: opacity 3s ease-in, visibility 0s linear 3s; */
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in, visibility 0s;
+    /* transition: opacity 0.2s ease-in, visibility 0s; */
+}
+
+.modal_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin-top: 210px;
+}
+
+.rules_content {
+    width: 430px;
+    height: 260px;
+}
+
+.modal_rules_container {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 420px;
+    height: 260px;
+    margin-left: 40px;
+    padding-right: 10px;
+    align-items: center;
+    background-image: url('./assets/img/paper3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    box-shadow: 7px 7px 9px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.modal_result_container {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    align-items: center;
+    background-image: url('./assets/img/paper3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    box-shadow: 7px 7px 9px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.modal_rules_container.show,
+.modal_result_container.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in, visibility 0s;
+}
+
+
+/* Сделай один класс? */
+.win_result,
+.lose_result {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    align-items: center;
+}
+
+.modal_result_container::before,
+.modal_result_container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5) -20%, rgba(0, 0, 0, 0) 30%)
+}
+
+.modal_result_container::before {
+    left: 0;
+}
+
+.modal_result_container::after {
+    rotate: 180deg;
+    right: 0;
+}
+
+.win_result h3,
+.lose_result h3 {
+    color: rgb(23 18 12);
+    font-size: 18px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.win_result_message,
+.lose_result_message {
+    text-align: center;
+    padding: 0 18px;
+}
+
+.game_time {
+    display: flex;
+    justify-content: space-around;
+    width: 255px;
+    padding-top: 30px;
+}
+
+.right_wing {
+    /* rotate: 3deg; */
+    filter: grayscale(0.4);
+    width: 68px;
+    top: -24px;
+    position: absolute;
+    left: 190px;
+}
+
+.left_wing {
+    /* rotate: -3deg; */
+    transform: scaleX(-1);
+    filter: grayscale(0.4);
+    width: 68px;
+    top: -24px;
+    position: absolute;
+    left: 40px;
+}
+
+
+
