@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="rules_text">
+        <h3 style="margin: 0; text-align: center;"><b>Game Rules</h3></b><br>
+        <b>1.	Goal of the game:</b> the goal of the game is to uncover all cells that do not contain mines.<br><br>
+        <b>2.	Game Modes:</b> Choose the difficulty level in the "Game Mode" section. You can also enable hints in the "Game Hints" section.<br><br>
+        <b>3.	Game Field:</b> The game field is represented by a square grid of cells. Above the game field, there is an indicator 
+            for flags, a game timer, and a button with an eye that provides hints about mines.<br><br>
+        <b>4.	Gameplay:</b><br>
+            -	Opening a cell: Left-clicking on a cell can open it. If there is no mine under the opened cell, 
+                it reveals a number (indicating the number of mined neighbors) or an "unmined" area.<br>
+            -	Flagging a cell: Right-clicking on a cell allows you to place a flag where you suspect a mine.<br><br>
+        <b>5.	Game Completion:</b><br>
+            -	The game ends in defeat if a cell with a mine is opened.<br>
+            -	The game ends successfully if all cells without mines are opened.<br><br>
+        <b>6.	New Game:</b><br>
+            -	Clicking the "New Game" button closes the game field and returns to the main page with the menu.
+    </div>
+
+    <style>
+        .rules_text {
+            font-size: 16px;
+            color: rgb(43, 43, 42);
+            font-family: 'Special Elite', system-ui;
+            text-align: justify;
+            padding: 15px 7px 15px 15px;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 7px;
+            margin-right: -12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(43 43 42 / 40%);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 6px;
+            background-color: #8c79677d;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #999;
+        }
+        
+    </style>
+</body>
+</html>
