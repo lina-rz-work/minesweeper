@@ -14,11 +14,16 @@ class GameHints {
 
         hintItem.addEventListener('click', () => {
             hintItem.classList.toggle('clicked');
+
             if (!hintItem.classList.contains('clicked')) {
+                hintItem.style.height = '40px';
+
                 hintItem.classList.add('unclicked');
                 hintItem.addEventListener('animationend', () => {
                     hintItem.classList.remove('unclicked');
                 });
+            } else {
+                hintItem.style.height = hintItem.scrollHeight + "px";
             }
 
             this.clearSelectionMessage();

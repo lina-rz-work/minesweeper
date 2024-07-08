@@ -29,7 +29,7 @@ class Game3 {
         this.createEmptyCells();
     }
 
-    private createMines() {
+    private createMines(): void {
         const mineIndexes = this.mineIndexes();
 
         for (let index of mineIndexes) {
@@ -68,7 +68,7 @@ class Game3 {
         });
     }
 
-    private createEmptyCells() {
+    private createEmptyCells(): void {
         const allCells: number = this.stats.rows * this.stats.cols;
         
         for (let i = 0; i < allCells; i++) {
@@ -83,7 +83,7 @@ class Game3 {
         }
     }
 
-    private createEmptyCell(index: number) {
+    private createEmptyCell(index: number): void {
         const emptyCell = new EmptyCell(this, index);
         emptyCell.create();
 
@@ -96,3 +96,4 @@ class Game3 {
 }
 
 export default Game3;
+

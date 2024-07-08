@@ -14,11 +14,16 @@ class GameModes {
 
         gameModeItem.addEventListener('click', () => {
             gameModeItem.classList.toggle('clicked');
+
             if (!gameModeItem.classList.contains('clicked')) {
+                gameModeItem.style.height = '40px';
+
                 gameModeItem.classList.add('unclicked');
                 gameModeItem.addEventListener('animationend', () => {
                     gameModeItem.classList.remove('unclicked');
                 });
+            } else {
+                gameModeItem.style.height = gameModeItem.scrollHeight + "px";
             }
 
             this.closeHintItem();
@@ -29,6 +34,8 @@ class GameModes {
     private closeHintItem(): void {
         const hintItem = document.querySelector('.hint_container') as HTMLDivElement;
         if (hintItem.classList.contains('clicked')) {
+            hintItem.style.height = '40px';
+
             hintItem.classList.remove('clicked');
             hintItem.classList.add('unclicked');
             hintItem.addEventListener('animationend', () => {

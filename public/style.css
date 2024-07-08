@@ -146,7 +146,7 @@ body {
 
     left: 0px;
     transform-origin: top;
-    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, height 0.6s ease;
 }
 
 .rules_container:hover, .mode_container:hover,
@@ -158,68 +158,25 @@ body {
     overflow: hidden;
 }
 
-.mode_container.clicked {
-    background: linear-gradient(135deg, rgba(220, 157, 121, 1), rgba(164, 86, 76, 1));
-    animation: modeAnim 0.6s ease forwards;
-}
-
+.mode_container.clicked,
 .hint_container.clicked {
     background: linear-gradient(135deg, rgba(220, 157, 121, 1), rgba(164, 86, 76, 1));
-    animation: hintAnim 0.6s ease forwards;
+    transition: height 0.6s ease;
+    transform: scale(1.05);
 }
 
-@keyframes modeAnim {
+.mode_container.unclicked,
+.hint_container.unclicked  {
+    transform: scale(1.05);
+    animation: reverseAnim 0.3s ease-out forwards;
+}
+
+@keyframes reverseAnim {
     to {
-        height: 145px;
-        transform: scale(1.05);
-    }
-}
-
-@keyframes hintAnim {
-    to {
-        height: 110px;
-        transform: scale(1.05);
-    }
-}
-
-.mode_container.unclicked {
-    animation: reverseModeAnim 0.6s ease-out forwards;
-}
-.hint_container.unclicked {
-    animation: reverseHintAnim 0.6s ease-out forwards;
-}
-
-@keyframes reverseModeAnim {
-    0% {
-        height: 150px;
-        transform: scale(1.05);
-    }
-    50% {
-        height: 40px;
-        transform: scale(1.05);
-    }
-    100% {
-        height: 40px;
         transform: scale(1);
     }
 }
 
-@keyframes reverseHintAnim {
-    0% {
-        height: 115px;
-        transform: scale(1.05);
-    }
-    50% {
-        height: 40px;
-        transform: scale(1.05);
-    }
-    100% {
-        height: 40px;
-        transform: scale(1);
-    }
-}
-
-/* * */
 .rules_title, .mode_title,
 .hint_title, .start_title {
     padding: 12px 0;

@@ -7,7 +7,7 @@ export default {
     module: {
 		rules: [
 			{
-				use: 'ts-loader', // для обработки TypeScript файлов
+				use: 'ts-loader',
 				exclude: /node_modules/,
 			},
 		],
