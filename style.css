@@ -1,33 +1,12 @@
 
 body {
-    background: url(/public/assets/img/silhouettes_of_soldiers_on_lookout_in_sunset_landscape_1905.jpg) no-repeat;
-    /* background: url(/public/assets/img/IMG_9792.PNG) no-repeat; */
-    /* background-size: 142%;
-    background-position-y: 40%;
-    background-position-x: 92%; */
+    background: url('./assets/img/silhouettes_of_soldiers_on_lookout_in_sunset_landscape_1905.jpg') no-repeat;
     background-size: 142%;
     background-position-y: 35%;
     background-position-x: 100%;
-
-    /* background: url(/public/assets/img/backgrounds/133Z_2106.w026.n002.499B.p1.499.jpg) no-repeat; */
-    /* background: url(/public/assets/img/backgrounds/133Z_2106.w026.n002.500B.p1.500.jpg) no-repeat; */
-    /* background: url(/public/assets/img/backgrounds/42664-O3EM01.jpg) no-repeat;
-    background-position-y: 15%; */
-    /* background: url(/public/assets/img/backgrounds/6229240.jpg) no-repeat; */
-    /* background: url(/public/assets/img/backgrounds/8039915.jpg) no-repeat; */
-    /* background: url(/public/assets/img/backgrounds/9294.jpg) no-repeat; */
-    /* background: url(/public/assets/img/backgrounds/7330700.jpg) no-repeat;
-    background-size: 102%;
-    background-position-y: 60%;
-    background-position-x: 82%; */
-    /* background-size: cover; */
-
     font-family: 'Special Elite', system-ui;
-    /* font-family: "Comic Sans MS"; */
     background-attachment: fixed;
 }
-
-
 
 .greeting {
     text-align: center;
