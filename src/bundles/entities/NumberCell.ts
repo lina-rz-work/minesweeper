@@ -85,7 +85,7 @@ class NumberCell implements EntityInterface {
 
     private createFlagImg(): void {
         const img = document.createElement('img');
-        img.src = '../public/assets/img/flag-2-svgrepo-com.svg';
+        img.src = './assets/img/flag-2-svgrepo-com.svg';
         img.style.visibility = 'hidden';
         img.classList.add('flag_svg');
 

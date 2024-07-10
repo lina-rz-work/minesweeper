@@ -36,8 +36,7 @@ class MineCell implements EntityInterface {
 
     private createMineImg(): void {
         const img = document.createElement('img');
-        img.src = '../public/assets/img/bomb-svgrepo-com.svg';
-        // img.src = '../public/assets/img/burst.svg';
+        img.src = './assets/img/bomb-svgrepo-com.svg';
         img.style.visibility = 'hidden';
         img.classList.add('mine_svg');
 
@@ -69,7 +68,7 @@ class MineCell implements EntityInterface {
 
     public clickCell(): void {
         const img = this.cell.querySelector('.mine_svg') as HTMLImageElement;
-        img.src = '../public/assets/img/bomb-svgrepo-com-red.svg';
+        img.src = './assets/img/bomb-svgrepo-com-red.svg';
         
         img.addEventListener('load', () => {
             this.game.mines.forEach(mine => {
@@ -105,7 +104,7 @@ class MineCell implements EntityInterface {
 
     private createFlagImg(): void {
         const img = document.createElement('img');
-        img.src = '../public/assets/img/flag-2-svgrepo-com.svg';
+        img.src = './assets/img/flag-2-svgrepo-com.svg';
         img.style.visibility = 'hidden';
         img.classList.add('flag_svg');
 
@@ -140,7 +139,7 @@ class MineCell implements EntityInterface {
 
     private createCrossImg(): void {
         const img = document.createElement('img');
-        img.src = '../public/assets/img/cross-svgrepo-com.svg';
+        img.src = './assets/img/cross-svgrepo-com.svg';
         img.style.visibility = 'hidden';
         img.classList.add('cross_svg');
         
