@@ -8,20 +8,17 @@ body {
     background-attachment: fixed;
 }
 
+
+
 .greeting {
     text-align: center;
     color: beige;
     margin-top: 100px;
     margin-bottom: 50px;
-
-    /* надо ли */
     opacity: 0;
     transform: translateY(25px);
     animation: fadeIn 0.5s ease-out forwards;
 }
-
-
-
 
 
 .menu_container {
@@ -109,7 +106,6 @@ body {
 
 
 
-
 .rules_container, .mode_container,
 .hint_container, .start_container  {
     position: absolute;
@@ -125,7 +121,7 @@ body {
 
     left: 0px;
     transform-origin: top;
-    transition: transform 0.1s ease, height 0.6s ease;
+    transition: transform 0.1s ease;
 }
 
 .rules_container:hover, .mode_container:hover,
@@ -137,25 +133,68 @@ body {
     overflow: hidden;
 }
 
-.mode_container.clicked,
+.mode_container.clicked {
+    background: linear-gradient(135deg, rgba(220, 157, 121, 1), rgba(164, 86, 76, 1));
+    animation: modeAnim 0.6s ease forwards;
+}
+
 .hint_container.clicked {
     background: linear-gradient(135deg, rgba(220, 157, 121, 1), rgba(164, 86, 76, 1));
-    transition: height 0.6s ease;
-    transform: scale(1.05);
+    animation: hintAnim 0.6s ease forwards;
 }
 
-.mode_container.unclicked,
-.hint_container.unclicked  {
-    transform: scale(1.05);
-    animation: reverseAnim 0.3s ease-out forwards;
-}
-
-@keyframes reverseAnim {
+@keyframes modeAnim {
     to {
+        height: 145px;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes hintAnim {
+    to {
+        height: 110px;
+        transform: scale(1.05);
+    }
+}
+
+.mode_container.unclicked {
+    animation: reverseModeAnim 0.6s ease-out forwards;
+}
+.hint_container.unclicked {
+    animation: reverseHintAnim 0.6s ease-out forwards;
+}
+
+@keyframes reverseModeAnim {
+    0% {
+        height: 150px;
+        transform: scale(1.05);
+    }
+    50% {
+        height: 40px;
+        transform: scale(1.05);
+    }
+    100% {
+        height: 40px;
         transform: scale(1);
     }
 }
 
+@keyframes reverseHintAnim {
+    0% {
+        height: 115px;
+        transform: scale(1.05);
+    }
+    50% {
+        height: 40px;
+        transform: scale(1.05);
+    }
+    100% {
+        height: 40px;
+        transform: scale(1);
+    }
+}
+
+/* * */
 .rules_title, .mode_title,
 .hint_title, .start_title {
     padding: 12px 0;
@@ -190,31 +229,17 @@ body {
 
 
 
-
-
-
-
-
-
 .game_container {
     display: flex;
     justify-content: center;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* width: max-content; */
-    /* width: 100%; */
-    /* min-height: 100vh; */
-    /* background: linear-gradient(135deg, #7fcab940, #8b856fd4); */
 }
 
 #playspace {
     display: flex;
     flex-direction: column;
     width: max-content;
-    /* min-height: 100vh; */
     padding-top: 60px;
 }
-
 
 
 .control_board {
@@ -250,7 +275,6 @@ body {
 }
 
 .time {
-    /* прочитай про позиционирование */
     position: relative;
     top: 2px;
     font-size: 15px;
@@ -288,8 +312,6 @@ body {
 
 
 
-
-
 .game_board {
     background-color: rgb(240, 243, 246);
     line-height: 0;
@@ -297,9 +319,7 @@ body {
     border-radius: 4px;
 }
 
-/* .game_board br {
-    display: block;
-} */
+
 
 .cell {
     font-size: 12px;
@@ -307,8 +327,6 @@ body {
     position: relative;
     width: 25px;
     height: 25px;
-    /* background-color: rgb(189, 189, 189); */
-    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(255, 255, 255, 0.8); */
     background-color: rgb(199 176 155);
     text-align: center;
     font-weight: bold;
@@ -323,28 +341,11 @@ body {
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5), -4px -4px 6px rgba(255, 255, 255, 0.85);
 }
 
-/* Специфичность */
 
-/* div.cell:hover {
-    box-shadow: 4px 4px 6px rgba(60, 255, 0, 0.5), -4px -4px 6px rgba(1, 255, 35, 0.85);
-} */
-
-/* .cell:hover {
-    box-shadow: 4px 4px 6px rgba(255, 69, 255, 0.5), -4px -4px 6px rgba(255, 79, 246, 0.85);
-} */
 
 .cell.unhovered {
     box-shadow: none;
 }
-
-/* .unhovered {
-    box-shadow: none !important;
-} */
-/* .unhovered {
-    box-shadow: none;
-} */
-
-/* Конец специфичности */
 
 
 .empty_cell {
@@ -384,10 +385,6 @@ body {
 
 
 
-
-
-
-
 .new_game_btn {
     align-self: end;
     width: max-content;
@@ -403,11 +400,7 @@ body {
 
 .new_game_btn:hover {
     scale: 106%;
-    /* transition: transform 0.1s ease-in-out; */
 }
-
-
-
 
 
 
@@ -425,15 +418,13 @@ body {
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
-    transition: opacity 0.2s ease-in, visibility 0.2s;  /* анимация opacity начнется сразу и продлится 3s, а visibility начнет применяться после 3 секунд.*/
-    /* transition: opacity 3s ease-in, visibility 0s linear 3s; */
+    transition: opacity 0.2s ease-in, visibility 0.2s;
 }
 
 .show {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.2s ease-in, visibility 0s;
-    /* transition: opacity 0.2s ease-in, visibility 0s; */
 }
 
 .modal_container {
@@ -491,10 +482,9 @@ body {
 }
 
 
-/* Сделай один класс? */
+
 .win_result,
 .lose_result {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -543,7 +533,6 @@ body {
 }
 
 .right_wing {
-    /* rotate: 3deg; */
     filter: grayscale(0.4);
     width: 68px;
     top: -24px;
@@ -552,7 +541,6 @@ body {
 }
 
 .left_wing {
-    /* rotate: -3deg; */
     transform: scaleX(-1);
     filter: grayscale(0.4);
     width: 68px;
@@ -560,6 +548,3 @@ body {
     position: absolute;
     left: 40px;
 }
-
-
-
