@@ -10,7 +10,7 @@ Hint option to give players strategic insights into the game board.<br>
 \- Gameplay Mechanics: Left-clicking on a cell reveals its contents. If the cell does not contain a mine, it displays either the number of adjacent mines or an "unmined" area. Right-clicking on a cell allows players to place a flag, marking cells suspected to contain mines and preventing accidental clicks. 
 Victory is achieved by successfully uncovering all cells that do not contain mines.
 
-The game is available at https://lina-rz-work.github.io/ms-draft/
+The game is available at https://lina-rz-work.github.io/minesweeper/
 
 ### Installation
 
