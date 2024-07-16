@@ -35,4 +35,10 @@ export default {
       ],
     }),
   ],
+  devServer: {
+    static: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+    open: true,
+  },
 };

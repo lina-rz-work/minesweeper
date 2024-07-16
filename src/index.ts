@@ -1,7 +1,4 @@
-import Modal from "./components/modal/Modal";
-import Menu from "./components/menu/Menu";
+import App from "./services/App";
 
-const modal = new Modal();
-const menu = new Menu();
-menu.initializeMenu();
-
+const app = new App();
+app.initialize();
